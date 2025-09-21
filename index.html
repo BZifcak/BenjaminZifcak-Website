@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Benjamin Zifcak — Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <!-- using the profile image you added; if you prefer a different path, update the src -->
+      <img class="avatar" src=".github/images/ProfileImg.jpg" alt="Benjamin Zifcak">
+      <div style="flex:1">
+        <h1 class="site-title">Benjamin Zifcak</h1>
+        <nav class="site-nav">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="hero" class="hero">
+      <h2>Hi — I build thoughtful web experiences.</h2>
+      <p class="lead">I'm a developer focused on clean, accessible, and performance-minded websites. Explore a few projects below.</p>
+      <p><a class="cta" href="#projects">See projects</a></p>
+    </section>
+
+    <section id="about" class="card">
+      <h3>About</h3>
+      <p>I enjoy creating web interfaces that are simple, maintainable, and fast. My interests include frontend engineering, accessibility, and design systems.</p>
+    </section>
+
+    <section id="projects" class="card">
+      <h3>Selected Projects</h3>
+      <ul id="projects-list" class="projects-grid">
+        <li id="projects-loading">Loading projects…</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="card">
+      <h3>Contact</h3>
+      <p>If you'd like to work together or ask a question, reach out at <a href="mailto:bmzifcak@udel.edu">bmzifcak@udel.edu</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> Benjamin Zifcak</small>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
