@@ -37,6 +37,15 @@ a:hover, a:focus { color: #5a432d; text-decoration: none; }
 .card{background:var(--card);padding:20px;margin:18px 0;border-radius:var(--radius);box-shadow:0 6px 20px rgba(59,47,37,0.06)}
 .projects-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .projects-grid article{padding:12px}
+.photos-grid{list-style:none;padding:0;margin:12px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.photo-item{list-style:none}
+.photo-item figure{margin:0;background:linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.12));padding:8px;border-radius:10px;display:flex;flex-direction:column;align-items:center}
+.photo-item img{width:100%;height:160px;object-fit:cover;border-radius:8px;transition:transform 280ms cubic-bezier(.2,.9,.2,1), box-shadow 280ms}
+.photo-item figcaption{margin-top:8px;color:var(--muted);font-size:13px}
+
+/* hover/rotate effect: slight random base rotation set by JS, then increase on hover */
+.photo-item img.rotate-base{transform:rotate(0deg)}
+.photo-item img:hover{transform:rotate(6deg) scale(1.02);box-shadow:0 12px 30px rgba(59,47,37,0.12)}
 .site-footer{padding:20px 0;color:var(--muted);text-align:center}
 @media (max-width:600px){
   .container{padding:16px}

@@ -77,3 +77,31 @@ if(document.readyState === 'loading'){
 } else {
   loadRepos();
 }
+
+// Photo rotation effects: set a small random base rotation and increase on hover
+function initPhotoRotations() {
+  const imgs = document.querySelectorAll('.photos-grid img');
+  imgs.forEach(img => {
+    // random base rotation between -6 and +6 degrees
+    const base = (Math.random() * 12) - 6;
+    img.style.transform = `rotate(${base}deg)`;
+    img.dataset.baseRotate = String(base);
+
+    img.addEventListener('mouseenter', () => {
+      const baseAngle = parseFloat(img.dataset.baseRotate) || 0;
+      img.style.transform = `rotate(${baseAngle + 6}deg) scale(1.02)`;
+      img.style.boxShadow = '0 12px 30px rgba(59,47,37,0.12)';
+    });
+    img.addEventListener('mouseleave', () => {
+      const baseAngle = parseFloat(img.dataset.baseRotate) || 0;
+      img.style.transform = `rotate(${baseAngle}deg)`;
+      img.style.boxShadow = '';
+    });
+  });
+}
+
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', initPhotoRotations);
+} else {
+  initPhotoRotations();
+}
