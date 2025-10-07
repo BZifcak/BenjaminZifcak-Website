@@ -64,6 +64,17 @@
     </div>
   </footer>
 
+  <!-- Photo modal (static description pulled from the image's <figcaption>) -->
+  <div id="photo-modal" class="photo-modal" aria-hidden="true">
+    <div class="photo-modal-backdrop" data-close></div>
+    <div class="photo-modal-panel" role="dialog" aria-modal="true">
+      <div class="photo-modal-content">
+        <div id="modal-desc" class="photo-desc">Description</div>
+      </div>
+      <div class="photo-meta-actions" style="margin-top:10px;display:flex;justify-content:flex-end"><button data-close class="cta" style="background:transparent;border:1px solid var(--muted);color:var(--muted)">Close</button></div>
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
 </body>
 </html>

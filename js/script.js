@@ -105,3 +105,36 @@ if(document.readyState === 'loading'){
 } else {
   initPhotoRotations();
 }
+
+// Static modal: click photo to open modal with non-editable description pulled from the <figcaption>
+function initStaticPhotoModal(){
+  const modal = document.getElementById('photo-modal');
+  if(!modal) return;
+  const modalDesc = document.getElementById('modal-desc');
+
+  function open(desc){
+    modalDesc.textContent = desc || '';
+    modal.setAttribute('aria-hidden','false');
+  }
+  function close(){
+    modal.setAttribute('aria-hidden','true');
+  }
+
+  // attach click listeners
+  document.querySelectorAll('.photo-item').forEach(item => {
+    const img = item.querySelector('img');
+    const caption = item.querySelector('figcaption');
+    if(!img) return;
+    img.addEventListener('click', () => open(caption ? caption.textContent : ''));
+  });
+
+  // close controls
+  modal.querySelectorAll('[data-close]').forEach(btn => btn.addEventListener('click', close));
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') close(); });
+}
+
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', initStaticPhotoModal);
+} else {
+  initStaticPhotoModal();
+}

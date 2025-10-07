@@ -54,3 +54,16 @@ a:hover, a:focus { color: #5a432d; text-decoration: none; }
   .header-row{gap:10px}
   .avatar{width:48px;height:48px}
 }
+
+/* simplified static photo modal styles */
+.photo-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1100}
+.photo-modal[aria-hidden="false"]{display:flex}
+.photo-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.45)}
+.photo-modal-panel{position:relative;background:var(--bg);border-radius:12px;padding:18px;max-width:560px;width:calc(100% - 48px);box-shadow:0 20px 50px rgba(0,0,0,0.25);z-index:1110}
+.photo-modal-content{display:block}
+.photo-desc{padding:14px;background:rgba(255,255,255,0.02);border-radius:8px;color:var(--text);font-size:15px;line-height:1.5}
+.photo-meta-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
+
+@media (max-width:600px){
+  .photo-modal-panel{padding:14px}
+}
