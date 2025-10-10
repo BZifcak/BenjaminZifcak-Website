@@ -29,14 +29,13 @@
     </section>
 
     <section id="photos" class="card">
-      <h3>Photos</h3>
-      <p class="lead">A few photos of my adventures</p>
+      <h3>Explore by area</h3>
+      <p class="lead">Click a topic to jump to its section and read more.</p>
       <ul class="photos-grid">
-        <li class="photo-item"><figure><img src="images/FullSizeRender.jpg" alt="Photo 1"><figcaption>FullSizeRender</figcaption></figure></li>
-        <li class="photo-item"><figure><img src="images/IMG_6211.JPG" alt="Photo 2"><figcaption>IMG_6211</figcaption></figure></li>
-        <li class="photo-item"><figure><img src="images/IMG_5895.JPG" alt="Photo 3"><figcaption>IMG_5895</figcaption></figure></li>
-        <li class="photo-item"><figure><img src="images/B35D0323-F7E6-4953-BF40-B582A43F5716.JPG" alt="Photo 4"><figcaption>Photo 4</figcaption></figure></li>
-        <li class="photo-item"><figure><img src="images/ProfileImg.jpg" alt="Profile"><figcaption>Profile</figcaption></figure></li>
+        <li class="photo-item"><a href="#section-leadership"><figure><img src="images/Leadership/Leadership.jpg" alt="Leadership"><figcaption>Leadership</figcaption></figure></a></li>
+        <li class="photo-item"><a href="#section-music"><figure><img src="images/Music/Music.JPG" alt="Music"><figcaption>Music</figcaption></figure></a></li>
+        <li class="photo-item"><a href="#section-performance"><figure><img src="images/Performance/performance.jpg" alt="Performance"><figcaption>Performance</figcaption></figure></a></li>
+        <li class="photo-item"><a href="#section-service"><figure><img src="images/Service/Service.jpg" alt="Service"><figcaption>Service</figcaption></figure></a></li>
       </ul>
     </section>
 
@@ -50,6 +49,94 @@
       <ul id="projects-list" class="projects-grid">
         <li id="projects-loading">Loading projects…</li>
       </ul>
+    </section>
+    <!-- Experiences separator -->
+    <div class="experiences-bar">
+      <div class="container">
+        <h2 class="experiences-title">Experiences</h2>
+      </div>
+    </div>
+
+    <!-- Experience cards: more dynamic layout with images breaking the content box -->
+    <section id="section-leadership" class="card detail-section experience-card">
+      <h3 class="exp-heading">Leadership</h3>
+      <div class="exp-body">
+        <div class="exp-content">
+          <p class="exp-intro">Leading student organizations and initiatives taught me communication, project design, and the importance of mentorship. Below are highlights and roles I've held.</p>
+          <ul>
+            <li>President, Student Council — organized campus-wide events and fundraising.</li>
+            <li>Mentor, Coding Club — guided peers through project-based learning.</li>
+            <li>Initiatives: Diversity & Inclusion workshops and outreach.</li>
+          </ul>
+          <p class="exp-more">(Replace this sample text with your narrative. Add links, dates, or accomplishments.)</p>
+        </div>
+        <div class="exp-images">
+          <img class="exp-img exp-img--big" src="images/Leadership/Leadership.jpg" alt="Leadership main">
+          <img class="exp-img exp-img--corner" src="images/Leadership/IMG_6264.JPG" alt="Leadership corner">
+          <img class="exp-img exp-img--side" src="images/Leadership/IMG_6771.jpg" alt="Leadership side">
+        </div>
+      </div>
+    </section>
+
+    <section id="section-music" class="card detail-section experience-card">
+      <h3 class="exp-heading">Music</h3>
+      <div class="exp-body reverse">
+        <div class="exp-content">
+          <p class="exp-intro">Music has been a creative home: performances, collaborations, and recordings. I enjoy blending technical precision with expressive interpretation.</p>
+          <ul>
+            <li>Solo & ensemble performances across campus and community venues.</li>
+            <li>Audio recording and production fundamentals.</li>
+            <li>Collaborations with student composers and interdisciplinary projects.</li>
+          </ul>
+          <p class="exp-more">(Update with your specific instruments, recordings, and highlights.)</p>
+        </div>
+        <div class="exp-images">
+          <img class="exp-img exp-img--big" src="images/Music/Music.JPG" alt="Music main">
+          <img class="exp-img exp-img--corner" src="images/Music/IMG_6211.JPG" alt="Music corner">
+          <img class="exp-img exp-img--side" src="images/Music/B35D0323-F7E6-4953-BF40-B582A43F5716.JPG" alt="Music side">
+          <img class="exp-img exp-img--extra" src="images/Music/P1020122.JPEG" alt="Music extra">
+        </div>
+      </div>
+    </section>
+
+    <section id="section-performance" class="card detail-section experience-card">
+      <h3 class="exp-heading">Performance</h3>
+      <div class="exp-body">
+        <div class="exp-content">
+          <p class="exp-intro">Performance stretches technical skill and stage presence — a place to practice resilience and craft.</p>
+          <ul>
+            <li>Repertoire across genres and ensemble sizes.</li>
+            <li>Collaborative projects with multi-disciplinary teams.</li>
+            <li>Workshops and masterclasses attended.</li>
+          </ul>
+          <p class="exp-more">(Add venues, dates, and notable performances here.)</p>
+        </div>
+        <div class="exp-images">
+          <img class="exp-img exp-img--big" src="images/Performance/performance.jpg" alt="Performance main">
+          <img class="exp-img exp-img--corner" src="images/Performance/IMG_3196.jpg" alt="Performance corner">
+          <img class="exp-img exp-img--side" src="images/Performance/IMG_6739.JPEG" alt="Performance side">
+        </div>
+      </div>
+    </section>
+
+    <section id="section-service" class="card detail-section experience-card">
+      <h3 class="exp-heading">Service</h3>
+      <div class="exp-body reverse">
+        <div class="exp-content">
+          <p class="exp-intro">Service work connects ideas to impact. I focus on community-driven projects and volunteering that scales help to those who need it most.</p>
+          <ul>
+            <li>Community outreach and volunteer coordination.</li>
+            <li>Project-based service learning initiatives.</li>
+            <li>Advocacy and support for underserved groups.</li>
+          </ul>
+          <p class="exp-more">(Describe organizations, roles, and outcomes here.)</p>
+        </div>
+        <div class="exp-images">
+          <img class="exp-img exp-img--big" src="images/Service/Service.jpg" alt="Service main">
+          <img class="exp-img exp-img--corner" src="images/Service/IMG_7626.jpg" alt="Service corner">
+          <img class="exp-img exp-img--side" src="images/Service/IMG_0928.JPG" alt="Service side">
+        </div>
+      </div>
     </section>
 
     <section id="contact" class="card">

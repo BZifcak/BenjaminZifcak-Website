@@ -67,3 +67,56 @@ a:hover, a:focus { color: #5a432d; text-decoration: none; }
 @media (max-width:600px){
   .photo-modal-panel{padding:14px}
 }
+
+/* Detail section layout */
+.detail-section .detail-row{display:flex;gap:16px;align-items:center}
+.detail-img{flex:0 0 220px}
+.detail-img img{width:100%;height:160px;object-fit:cover;border-radius:10px;transition:transform 300ms,box-shadow 300ms}
+.detail-text{flex:1}
+
+/* Linked thumbnail rotation: ensure anchor wrapping image uses rotation */
+.photos-grid a img{transition:transform 300ms cubic-bezier(.2,.9,.2,1),box-shadow 300ms}
+.photos-grid a:hover img{transform:rotate(6deg) scale(1.03);box-shadow:0 14px 36px rgba(59,47,37,0.12)}
+
+@media (max-width:880px){
+  .detail-section .detail-row{flex-direction:column}
+  .detail-img{width:100%;flex:0 0 auto}
+}
+
+/* Experiences separator bar */
+.experiences-bar{background:linear-gradient(90deg, rgba(226,169,63,0.12), rgba(226,169,63,0.06));padding:20px 0;margin-top:8px;margin-bottom:18px;border-top:4px solid rgba(226,169,63,0.18);border-bottom:1px solid rgba(59,47,37,0.04)}
+.experiences-title{margin:0;font-size:22px;color:var(--text);letter-spacing:0.6px}
+
+/* Experience card styles */
+.experience-card{overflow:visible;position:relative}
+.exp-body{display:flex;gap:18px;align-items:stretch;position:relative}
+.exp-content{flex:1;padding:8px 10px}
+.exp-heading{margin-top:0}
+.exp-intro{font-weight:600;margin:0 0 12px}
+.exp-more{color:var(--muted)}
+
+/* images layer: big center image and decorative corner/side images that break the card bounds */
+.exp-images{flex:0 0 360px;position:relative}
+.exp-img{position:relative;display:block;border-radius:10px}
+.exp-img--big{width:100%;height:220px;object-fit:cover;box-shadow:0 12px 30px rgba(59,47,37,0.08);transform-origin:center;transition:transform 320ms,box-shadow 320ms}
+.exp-img--side{position:absolute;right:-40px;top:40px;width:140px;height:120px;object-fit:cover;transform:rotate(-6deg);box-shadow:0 10px 20px rgba(59,47,37,0.08);transition:transform 320ms}
+.exp-img--corner{position:absolute;left:-44px;bottom:-20px;width:120px;height:100px;object-fit:cover;transform:rotate(8deg);box-shadow:0 10px 20px rgba(59,47,37,0.08);transition:transform 320ms}
+/* extra image when a fourth image is present */
+.exp-img--extra{position:absolute;right:10px;bottom:-30px;width:110px;height:90px;object-fit:cover;transform:rotate(-4deg);box-shadow:0 8px 18px rgba(59,47,37,0.06);transition:transform 320ms}
+
+.exp-body.reverse .exp-images{order:-1}
+
+/* hover interactions */
+.exp-images:hover .exp-img--big{transform:scale(1.02) rotate(2deg)}
+.exp-images:hover .exp-img--side{transform:translateX(-6px) rotate(-2deg)}
+.exp-images:hover .exp-img--corner{transform:translateX(6px) rotate(2deg)}
+
+/* entrance animation */
+.experience-card{opacity:0;transform:translateY(18px);transition:opacity 520ms ease, transform 520ms ease}
+.experience-card.in-view{opacity:1;transform:translateY(0)}
+
+@media (max-width:880px){
+  .exp-body{flex-direction:column}
+  .exp-images{width:100%;flex:0 0 auto}
+  .exp-img--side, .exp-img--corner{position:relative;left:0;right:0;transform:none;margin-top:10px}
+}

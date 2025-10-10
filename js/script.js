@@ -80,7 +80,7 @@ if(document.readyState === 'loading'){
 
 // Photo rotation effects: set a small random base rotation and increase on hover
 function initPhotoRotations() {
-  const imgs = document.querySelectorAll('.photos-grid img');
+  const imgs = document.querySelectorAll('.photos-grid img, .photos-grid a img');
   imgs.forEach(img => {
     // random base rotation between -6 and +6 degrees
     const base = (Math.random() * 12) - 6;
@@ -125,6 +125,8 @@ function initStaticPhotoModal(){
     const img = item.querySelector('img');
     const caption = item.querySelector('figcaption');
     if(!img) return;
+    // don't attach modal to images wrapped in anchors (these navigate to sections)
+    if(img.closest('a')) return;
     img.addEventListener('click', () => open(caption ? caption.textContent : ''));
   });
 
@@ -137,4 +139,22 @@ if(document.readyState === 'loading'){
   document.addEventListener('DOMContentLoaded', initStaticPhotoModal);
 } else {
   initStaticPhotoModal();
+}
+
+// Animate experience cards into view
+function initExperienceObserver(){
+  const cards = document.querySelectorAll('.experience-card');
+  if(!cards.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(ent => {
+      if(ent.isIntersecting) ent.target.classList.add('in-view');
+    });
+  },{threshold:0.12});
+  cards.forEach(c => obs.observe(c));
+}
+
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', initExperienceObserver);
+} else {
+  initExperienceObserver();
 }
